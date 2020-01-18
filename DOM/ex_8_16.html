@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 예 8.16 -->
+        <h3>Programming Language</h3><hr>
+        <ul>
+            <li>C/C++</li><ol id="current"><li>HTML 5</li><li>JScript</li><li>PHP</li><li>JSP</li></ol><li>Java</li><li>Python</li></ul>
+        
+        <!-- 예 8.17 -->
+        <h3>Web Programming</h3>
+        <ul id="t1">클라이언트 프로그래밍<li>HTML 5</li><li>CSS3</li><li>Javascript</li></ul><hr>
+        <ul>서버 크로그래밍</ul>
+
+        <!-- 예 8.16 -->
+        <button onclick="f1();">현재 위치 노드</button><span id="s1"></span><br>
+        <button onclick="f2();">직전 형제 노드</button><span id="s2"></span><br>
+        <button onclick="f3();">직후 형제 노드</button><span id="s3"></span><br>
+        <button onclick="f4();">첫 번째 자식 노드</button><span id="s4"></span><br>
+        <button onclick="f5();">두 번째 자식 노드</button><span id="s5"></span><br>
+        <button onclick="f6();">마지막 자식 노드</button><span id="s6"></span><br>
+        
+        <script>
+            // 예 8.16
+            function f1(){
+                var c = document.getElementById('current');
+                var stag = document.getElementById('s1');
+                c.style.border = '1px red solid';
+                stag.innerHTML = "빨간색 박스";
+            }
+            function f2(){
+                var c = document.getElementById('current');
+                var stag = document.getElementById('s2');
+                stag.innerText = c.previousSibling.innerText;
+            }
+            function f3(){
+                var c = document.getElementById('current');
+                var stag = document.getElementById('s3');
+                stag.innerText = c.nextSibling.innerText;
+            }
+            function f4(){
+                var c = document.getElementById('current');
+                var stag = document.getElementById('s4');
+                stag.innerText = c.firstChild.innerText;
+            }
+            function f5(){
+                var c = document.getElementById('current');
+                var stag = document.getElementById('s5');
+                stag.innerText = c.childNodes[1].innerText;
+            }
+            function f6(){
+                var c = document.getElementById('current');
+                var stag = document.getElementById('s6');
+                stag.innerText = c.lastChild.innerText;
+            }
+
+            // 예 8.17
+            var tag1 = document.getElementById('t1');
+            document.write('<hr>**** DOM 트리 탐색 ****<br>');
+            document.write('노드의 자식 노드 갯수: ' + tag1.childNodes.length + '<br>');
+            for (i=0; i<tag1.childNodes.length; i++){
+                document.write(i + '번째 자식노드: ' + tag1.childNodes[i] + '<br>');
+            }
+
+        </script>
+    </body>
+    </html>
+</body>
+</html>

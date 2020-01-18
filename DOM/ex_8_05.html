@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #b1{
+            width: 300px;
+            height: 100px;
+            border: 1px black solid;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+    <script>
+        function changeStyle(){
+            var divTag = document.getElementById("b1");
+            divTag.style.fontSize = '20px';
+            divTag.style.width = '250px';
+            divTag.style.height = '50px';
+            divTag.style.lineHeight = '50px';
+            divTag.style.borderRadius = '30%';
+            divTag.style.boxShadow = '5px -5px drakgray';
+        }
+    </script>
+</head>
+<body> 
+    <div id="b1">자바 스크립트 입문</div>
+    <button onclick="changeStyle();">스타일 변경</button>
+</body>
+</html>

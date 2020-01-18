@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        중간시험 성적: <input type="text" id="mid" /><br>
+        기말시험 성적: <input type="text" id="last"/><hr>
+    </form>
+    <button onclick="f1();"/>처리결과</button>
+    <div id="d1"></div>
+
+    <script>
+        function f1(){
+            var avg, grade, result;
+            var s1 = document.getElementById('mid').value;
+            var s2 = document.getElementById('last').value;
+            var pTag = document.getElementById('d1');
+
+            avg = (Number(s1)+Number(s2))/2;
+            if(avg >= 90){
+                grade = 'A';
+            }
+            else if(avg >=80){
+                grade = 'B';
+            }
+            else if(avg >= 70){
+                grade = 'C';
+            }
+            else if(avg >= 60){
+                grade = 'D';
+            }
+            else
+                grade = 'F';
+
+            result = "<br>평균: "+avg;
+            result = result + "<br>학점: " + grade;
+            pTag.innerHTML = result;
+        }
+    </script>
+</body>
+</html>

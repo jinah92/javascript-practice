@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h3>Q1. 학생의 학년?</h3>
+        1학년 <input type="radio" name="year" value="1" />
+        2학년 <input type="radio" name="year" value="2" checked />
+        3학년 <input type="radio" name="year" value="3" />
+        4학년 <input type="radio" name="year" value="4" />
+        <br>
+        <h3>Q2. 학생이 좋아하는 과목?</h3>
+        <input type="checkbox" name="subject" value="알고리즘" />알고리즘
+        <input type="checkbox" name="subject" value="자료구조" />자료구조
+        <input type="checkbox" name="subject" value="데이터베이스" />데이터베이스
+        <input type="checkbox" name="subject" value="운영체제" />운영체제
+        <input type="checkbox" name="subject" value="네트워크" />네트워크<hr>
+        <input type="button" value="입력완료" onclick="dataReading();" />
+    </form>
+    <div id="result"></div>
+    <script>
+        function dataReading(){
+            var output1 = "", output2 = "";
+            var years = document.getElementsByName("year");
+            for (var i=0; i<years.length; i++){
+                if(years[i].checked == true)
+                {
+                    yearValue = years[i].value;
+                    break;
+                }
+            }
+
+            output1 = output1 + '학년: ' + yearValue;
+            var subjects = document.getElementsByName("subject");
+            var checkedValue = "";
+            for(i=0; i<subjects.length; i++){
+                if(subjects[i].checked == true){
+                    checkedValue += '' + subjects[i].value;
+                }
+            }
+            output2 += '좋아하는 과목: ' + checkedValue;
+            var obj = document.getElementById("result");
+            obj.innerHTML = output1 + '<br>' + output2;
+        }
+    </script>
+</body>
+</html>

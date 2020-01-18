@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    추천 여행지: <input id="t1" type="text" />
+    <button onclick="listPlace1();">국내</button>
+    <button onclick="listPlace2();">해외</button>
+    <div id="d1">
+        <div>1. 국내 여행지</div>
+        <div id="d2">2. 해외 여행지</div>
+    </div>
+    <script>
+        function listPlace2(){
+            var tag1 = document.getElementById('t1');
+            var tag2 = document.getElementById('d1');
+            var newtag = document.createElement('div');
+            var txtNode = document.createTextNode(tag1.value);
+            newtag.appendChild(txtNode);
+            tag2.appendChild(newtag);
+            inTag.value="";
+        }
+        function listPlace1(){
+            var tag1 = document.getElementById('t1');
+            var tag2 = document.getElementById('d1');
+            var tag3 = document.getElementById('d2');
+            var newtag = document.createElement('div');
+            var txtNode = document.createTextNode(tag1.value);
+            newtag.appendChild(txtNode);
+            tag2.insertBefore(newtag, tag3);
+            inTag.value="";
+        }
+    </script>
+</body>
+</html>

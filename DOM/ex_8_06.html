@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #switch {background-color: lightyellow;}
+    </style>
+    <script>
+        function changeSwitch(){
+            var tag1 = document.getElementById("light");
+            var tag2 = document.getElementById("switch");
+            if(tag2.innerHTML == 'On'){
+                tag2.innerHTML = "Off";
+                tag2.style.backgroundColor = "lightgray";
+                tag1.src = "img/lighton.jpg";
+            }
+            else{
+                tag2.innerHTML = "On";
+                tag2.style.backgroundColor = "lightyellow";
+                tag1.src = "img/lightoff.jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="light" src="img/lightoff.jpg" style="width: 70px;">
+    <button id="switch" onclick="changeSwitch();">On</button>
+</body>
+</html>

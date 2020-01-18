@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        function dataReading(){
+            var output = "가장 좋아하는 전공과목: ";
+            var obj = document.getElementById("s");
+            output += obj.options[obj.selectedIndex].value;
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>가장 좋아하는 전공과목?</h3>
+    <select id="s">
+        <option value="데이터베이스" selected>데이터베이스</option>
+        <option value="알고리즘">알고리즘</option>
+        <option value="웹 프로그래밍">웹 프로그래밍</option>
+        <option value="컴퓨터 구조">컴퓨터 구조</option>
+        <option value="컴퓨터 네트워크">컴퓨터 네트워크</option>
+        <option value="프로젝트">프로젝트</option>
+    </select>
+    <button onclick="dataReading();">선택완료</button><hr>
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    여행하고 싶은 지역: <input id="t1" type="text" />
+    <button onclick="listPlace();">추가</button>
+    <ul id="t2"></ul>
+    <script>
+        function listPlace(){
+            var tag1 = document.getElementById('t1');
+            var tag2 = document.getElementById('t2');
+            var newPlace = document.createElement('li');
+            var placeNode = document.createTextNode(tag1.value);
+            newPlace.appendChild(placeNode);
+            tag2.appendChild(newPlace);
+            tag1.value="";
+        }
+    </script>
+</body>
+</html>

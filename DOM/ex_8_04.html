@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <button id="b1" onclick="changeOn();">전구 켜기</button>
+    <img id="light" src="img/lightoff.jpg" style="width: 70px;" />
+    <button id="b2" onclick="changeOff();">전구 끄기</button>
+
+    <script>
+        function changeOff(){
+            var tag1 = document.getElementById("light");
+            tag1.src = "img/lightoff.jpg";
+        }
+        function changeOn(){
+            var tag1 = document.getElementById("light");
+            tag1.src = "img/lighton.jpg";
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

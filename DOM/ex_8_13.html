@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #rangeProgress{
+            width: 100%;
+            height: 30px;
+            position: relative;
+            background-color: darkblue;
+        }
+        #bar{
+            background-color: orange;
+            width: 0px; height: 30px;   position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h3>진행과정 표시</h3>
+    진행상테 : <span id="demo">0%</span><hr>
+    <div id="rangeProgress">
+        <div id="bar"></div>
+    </div><hr>
+    <button onclick="move()">진행</button>
+    <script>
+        function move() {
+            var progressBar = document.getElementById("bar");
+            var demo1 = document.getElementById("demo");
+            var width = 0;
+            var id = setInterval(function(){
+                if(width ==100)
+                    clearInterval(id);
+                else{
+                    width++;
+                    progressBar.style.width = width + '%';
+                    demo1.innerHTML=width + '%';
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="stuInfo">
+        학과 : <input type="text" name="dept" /> &nbsp;&nbsp;&nbsp;
+        이름 : <input type="text" name="sName" /><hr>
+    </form>
+    <form name="q1"> Q1. HTML5 프로그래밍에서 다루는 내용이 아닌 것?<br>
+        <input type="radio" name="p1" value="1">HTML </input><br>
+        <input type="radio" name="p1" value="2">CSS3 </input><br>
+        <input type="radio" name="p1" value="3">Javascript </input><br>
+        <input type="radio" name="p1" value="4">PHP </input><br>
+    </form>
+    <form name="q2"> Q2. 다음 중 그 성격이 다른 프로그램?<br>
+        <input type="radio" name="p2" value="1">사파리 </input><br>
+        <input type="radio" name="p2" value="2">파워포인트 </input><br>
+        <input type="radio" name="p2" value="3">파이어폭스 </input><br>
+        <input type="radio" name="p2" value="4">크롬 </input><br>
+    </form>
+    <button onclick="computeScore();">채점(10점 만점)</button>
+    <span id="result"></span>
+    <script>
+        function computeScore(){
+            var choice = new Array();   // 학생 응답
+            var answer = [4, 2];        // 정답
+            var sname = document.stuInfo.sName.value;
+            var noti = document.getElementById('result');
+            var score = 0;
+            choice[0] = document.forms[1].p1.value;
+            choice[1] = document.forms[2].p2.value;
+            for (i=0; i<2; i++){
+                if(parseInt(choice[i])===parseInt(answer[i]))
+                    score = score + 10;
+            }
+            noti.innerHTML = sname + " : " + score + "점";
+        }
+    </script>
+</body>
+</html>

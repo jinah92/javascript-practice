@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function changeContent(){
+            var pTag = document.getElementById("p1");
+            var txt = "이제부터 자바스크립트를 공부";
+            txt += "<br><hr>";
+            txt += "<img src='img/javascript.png' width=150 height=100 /><hr>";
+            pTag.innerHTML = txt;
+        }
+    </script>
+</head>
+<body>
+    <h2>Web Programming</h2>
+    <p id="p1">지금까지 HTML과 CSS를 공부했습니다.</p>
+    <button type="button" onclick="changeContent();">Next</button>
+</body>
+</html>

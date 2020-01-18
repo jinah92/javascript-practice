@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Web Browser</h3>
+    <div id="p1">
+        <img src="img/wb1.png" width="60" height="60" />
+        <img src="img/wb2.png" width="60" height="60" id="w1" />
+        <img src="img/wb3.png" width="60" height="60" id="w2" />
+    </div><hr>
+    <button onclick="deleteBrave();">brave 삭제</button>
+    <button onclick="replaceSapari();">익스플로어 대체</button>
+    <script>
+        function deleteBrave(){
+            var deletedTag = document.getElementById("w1");
+            deletedTag.parentNode.removeChild(deletedTag);
+        }
+        function replaceSapari(){
+            var newTag = document.createElement('img');
+            var tagContent = document.createTextNode('사파리');
+            newTag.setAttribute('src', 'img/wb4.png');
+            newTag.setAttribute('width', '60px');
+            newTag.setAttribute('height', '60px');
+            var oldTag = document.getElementById('w2');
+            var parent = oldTag.parentNode;
+            parent.replaceChild(newTag, oldTag);
+        }
+    </script>
+</body>
+</html>

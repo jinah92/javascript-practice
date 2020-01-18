@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function changeContent(){
+            var pTag = document.getElementById("p1");
+            pTag.innerHTML = "이제부터 자바스크립트를 시작";
+        }
+    </script>
+</head>
+<body>
+    <h3>What can JavaScript Do?</h3>
+    <p id="p1">지금까지 HTML과 CSS를 공부했음</p>
+    <button type="button" onclick="changeContent();">Next</button>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #t1 {
+            width: 250px;   background: skyblue; text-align: center;
+            border-radius: 10%; display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var inter=100;
+        function changeObj(){
+            var obj = document.getElementById('t1');
+            var d = new Date();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+            if(h<12)
+                text = "AM";
+            else
+                text = "PM";
+            obj.innerHTML = text + " " + h + " : " + m + " : " + s + " ";
+        }
+        setInterval(changeObj, inter);
+    </script>
+    <h2>디지털 시계</h2>
+    <h1 id="t1"></h1>
+</body>
+</html>

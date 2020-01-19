@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.getElementById("a1").onclick = f1;
+            document.getElementById("a2").addEventListener("click", f1);
+            document.getElementById("a3").onclick = f2;
+        }
+
+        function f1(e) {e.preventDefault();}
+
+        function f2(e) {
+            var result = confirm("정보 검색 사이트로 이동할까요?");
+            if(result == false) e.preventDefault();
+        }
+
+    </script>
+
+</head>
+<body>
+    <a href="http://www.google.co.kr" target="_blank">하이퍼링크-1</a><br>
+    <a href="http://www.google.co.kr" target="_blank" onclick=" return false">하이퍼링크-2</a><br>
+    <a href="http://www.google.co.kr" target="_blank" onclick=" f1(event);">하이퍼링크-3</a><br>
+    <a href="http://www.google.co.kr" target="_blank" id="a1">하이퍼링크-4</a><br>
+    <a href="http://www.google.co.kr" target="_blank" id="a2">하이퍼링크-5</a><br>
+    <a href="http://www.google.co.kr" target="_blank" id="a3">하이퍼링크-6</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.getElementById("old").onclick = eventHandler;
+            document.getElementById("old").onmouseover = eventHandler;
+            document.getElementById("standard").addEventListener("click", eventHandler);
+            document.getElementById("standard").addEventListener("mouseover", eventHandler);
+        }
+
+        function eventHandler(e){
+            var output = e + ":" + e.type + " 이벤트가 발생함!";
+            var obj = document.getElementById("result");
+            obj.innerHTML = output;
+        }
+    </script>
+
+</head>
+<body>
+    <h4>이벤트 모델의 이벤트 객체 처리</h4><hr>
+    인라인 이벤트 모델: 
+    <button onclick="eventHandler(event);" onmouseover="eventHandler(event);">이벤트 발생</button><br>
+    고전 이벤트 모델: 
+    <button id="old">이벤트 발생</button><br>
+    표준 이벤트 모델:
+    <button id="standard">이벤트 발생</button><br><hr>
+    <div id="result"></div>
+</body>
+</html>

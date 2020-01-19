@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <img id="fig1" src="img/wb1.png" width="200" height="150" onclick="f();" /><br>
+    <p id="demo"></p>
+    <img id="fig2" src="" />
+
+    <script>
+        function f(){
+            var obj=document.getElementById("fig2");
+            obj.src = "img/wb2.png";    // 이미지 파일 요청 및 백그라운드 로딩 시작
+            obj.onload = function() {
+                document.getElementById("demo").innerHTML = '이미지 파일 크기:' + obj.width + 'x' + obj.height;4
+            }
+        }
+    </script>
+
+</body>
+</html>

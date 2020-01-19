@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta charset="uft-8">
+</head>
+<body>
+    영문명: <input type="text" id="fname" onfocus="f1();" onblur="f2()" /><br>
+    연락처: <input type="text" />
+    <script>
+        function f1() {
+            var x = document.getElementById("fname");
+            x.style.background = "gray";
+        }
+        function f2() {
+            var x = document.getElementById("fname");
+            x.style.background = "white";
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>

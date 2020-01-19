@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function f1 (obj) {obj.src = "img/m2.png";}
+        function f2 (obj) {obj.src = "img/m1.png";}
+    </script>
+</head>
+<body>
+    <h4>마우스를 그림 위로 이동</h4>
+    <img id="fg" src="img/m1.png" width="200" height="150"
+    onmouseover="f1(this)"; onmouseout="f2(this);" /><br>
+
+    <h4>contextmenu 메뉴처리 불가</h4><br>
+    <img src="img/javascript.png" width="200" height="150" oncontextmenu="return false">
+    
+</body>
+</html>

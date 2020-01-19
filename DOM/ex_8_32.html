@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <p>구매할 차종의 제작사(브랜드)를 선택하세요.</p>
+    <select id="mySelect" onchange="f()">
+        <option value="아우디">Audi
+        <option value="BMW">BMW
+        <option value="메르세데스">Mercedes
+        <option value="볼보">Volvo
+    </select>
+    <p id="demo"></p>
+    <script>
+        function f() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = x + "의 차를 선택하셨습니다.";
+        }
+    </script>
+</body>
+</html>

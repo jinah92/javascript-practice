@@ -9,15 +9,26 @@
     <script>
         function dataReading(){
             var output = "가장 좋아하는 전공과목: ";
-            var obj = document.getElementById("s");
-            output += obj.options[obj.selectedIndex].value;
+
+            // var obj = document.getElementById("s");      // 단일선택
+            var obj = document.getElementsByName("s");   // 다중선택
+
+            // output += obj.options[obj.selectedIndex].value;
+            for (i=0; i<obj.length; i++){
+                if(obj[i].selected){
+                    output = output + obj[i].value + " ";
+                }
+            }
+
+            var obj = document.getElementById("result");
+            obj.innerHTML = output;
             
         }
     </script>
 </head>
 <body>
     <h3>가장 좋아하는 전공과목?</h3>
-    <select id="s">
+    <select id="s" multiple>
         <option value="데이터베이스" selected>데이터베이스</option>
         <option value="알고리즘">알고리즘</option>
         <option value="웹 프로그래밍">웹 프로그래밍</option>

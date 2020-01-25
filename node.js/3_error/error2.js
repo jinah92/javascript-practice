@@ -1,4 +1,4 @@
-const fs = require('fs');
+/* const fs = require('fs');
 
 setInterval(() => {
     fs.unlink('./abcdefg.js', (err) => {       
@@ -6,6 +6,17 @@ setInterval(() => {
             console.error(err);
         } else {                        // 정상 실행
             console.log('bbb'); 
+        }
+    });
+}, 1000); */
+
+/* 복습 */
+const fs = require('fs');
+
+setInterval(() => {
+    fs.unlink('./abcd.js', (err)=>{
+        if(err){
+            console.log(err);
         }
     });
 }, 1000);

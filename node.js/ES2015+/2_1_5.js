@@ -37,3 +37,22 @@ var bool = array[3];
 // 배열의 비구조화 (2)
 const array = ['nodejs', {}, 10, true];
 const [node, obj, , bool] = array;
+
+/* 복습 */
+// 비구조화 - (1) 객체
+const testMachine = {
+    status_test: {
+        name: 'node',
+        count: 5,
+    },
+    getItems() {
+        this.status_test.count --;
+        return this.status_test.count;
+    }
+};
+
+const {getItems, status_test: {count}} = testMachine;
+
+// 비구조화 - (2) 배열
+const array_test = ['nodejs', {}, 10, true];
+const [node, obj, , bool] = array_test;

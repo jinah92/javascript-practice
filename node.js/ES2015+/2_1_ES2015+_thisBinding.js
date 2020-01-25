@@ -21,4 +21,3 @@ var relationship1 = {
     },  // end function
 };  // end object
 relationship1.logFriends();
-

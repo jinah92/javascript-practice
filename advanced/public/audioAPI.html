@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--     <audio src="music01.mp3" controls ></audio> -->
+    <script>
+      var audio1 = new Audio();
+      function musicPlay() {
+        audio1.src = document.getElementById("song2").value;
+        audio1.play();
+      }
+      function musicStop() {
+        audio1.pause();
+        audio1.currentTime = 0;
+      }
+    </script>
+
+    듣고싶은 음악 선택<br /><br />
+    희망곡 :
+    <select id="song2">
+      <option value="music01.mp3" selected>Music01</option>
+      <option value="music03.mp3">Music03</option>
+    </select>
+    <div>
+      <button onclick="musicPlay()">노래 시작</button>
+      <button onclick="audio1.pause()">일시 멈춤</button>
+      <button onclick="audio1.play()">계속 감상</button>
+      <button onclick="audio1.currentTime-=1;">되돌리기</button>
+      <button onclick="audio1.currentTime-=1;">정지</button>
+    </div>
+  </body>
+</html>

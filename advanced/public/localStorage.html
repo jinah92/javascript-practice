@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function showPoint() {
+        document.getElementById("totalPoint").value = localStorage.points; //localStorage: 내장 객체, points: Key 값
+      }
+      function clickPoint() {
+        if (localStorage !== null) {
+          if (sessionStorage.points) {
+            sessionStorage.points++;
+          } else {
+            sessionStorage.points = 1;
+          }
+          document.getElementById("totalPoint").value = sessionStorage.points;
+        } else {
+          document.getElementById("totalPoint").value = "포인트 적립 불가";
+        }
+      }
+      function clearPoint() {
+        sessionStorage.removeItem("points");
+        document.getElementById("totalPoint").value = sessionStorage.points;
+      }
+    </script>
+  </head>
+  <body onload="showPoint()">
+    <p>
+      누적 포인트: <input type="text" id="totalPoint" size="6" disabled />
+      <button onclick="clickPoint()">+</button>
+      <button onclick="clearPoint()">reset</button>
+    </p>
+    <hr />
+    <p>"+"버튼을 클릭하면 세션 포인트 추가</p>
+  </body>
+</html>

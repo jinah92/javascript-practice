@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        align-content: center;
+        padding: 0;
+      }
+      #div1,
+      #div2 {
+        width: 300px;
+        height: 100px;
+        border: 1px solid navy;
+      }
+      img {
+        width: 50px;
+        margin: 10px;
+      }
+    </style>
+    <script>
+      function dragstartListener(event) {
+        event.dataTransfer.setData("imgNo", event.target.id);
+      }
+      function dragoverListener(event) {
+        event.preventDefault();
+      }
+      function dropListener(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("imgNo");
+        console.log("target: " + event.target + " data: " + data);
+        event.target.appendChild(document.getElementById(data));
+      }
+    </script>
+  </head>
+  <body>
+    <p>드래드&드롭 기능을 이용한 이미지 이동</p>
+    <div id="div1" ondrop="dropListener(event)" ondragover="dragoverListener(event)">
+      <img src="./img/logo1.png" draggable="true" ondragstart="dragstartListener(event)" id="d1" />
+      <img src="./img/logo2.png" draggable="true" ondragstart="dragstartListener(event)" id="d2" />
+      <img src="./img/logo3.png" draggable="true" ondragstart="dragstartListener(event)" id="d3" />
+      <img src="./img/logo4.png" draggable="true" ondragstart="dragstartListener(event)" id="d4" />
+    </div>
+    <hr />
+    <div id="div2" ondrop="dropListener(event)" ondragover="dragoverListener(event)"></div>
+  </body>
+</html>

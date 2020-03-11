@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>My First Google Map</h1>
+    <button onclick="getLocation()">구글맵 현재 위치</button>
+    <hr />
+    <div id="demo"></div>
+    <div id="mapholder"></div>
+    <script>
+      var x = document.getElementById("demo");
+      const API_KEY = "AIzaSyAL20LddVCqTQhtJoPwbVzSG2JPihynU0A";
+      let mapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${Lat},${Lon}&zoom=14&size=400x400&key=${API_KEY}`;
+
+      function getLocation(){
+          if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+          }else{
+
+          }
+      }
+    </script>
+  </body>
+</html>

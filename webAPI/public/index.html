@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      let w;
+      function startWorker() {
+        if (typeof Worker !== "undefined") {
+          if (typeof w == "undefined") {
+            w = new Worker("workertask.js");
+          }
+          w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+          };
+        } else {
+          document.getElementById("result").innerHTML = "이 브라우저가 Worker를 지원하지 않습니다";
+        }
+      }
+
+      function stopWorker() {
+        w.terminate();
+      }
+
+      let webSocket, chatId;
+      function startchat() {
+        webSocket = new WebSocket("ws://localhost:8080");
+        webSocket.onopen = function() {
+          chatId = "[" + document.getElementById("chatId").value + "]"; //[chatId]
+          if (chatId) {
+            alert("start chatting");
+          } else {
+            alert("채팅아이디를 입력하세요");
+          }
+        };
+        webSocket.onmessage = function(event) {
+          console.log(event.data);
+          document.getElementById("ta").value += event.data;
+        };
+      }
+      function sendMsg() {
+        console.log(event);
+        if (event.key === "Enter") {
+          console.log("send to server");
+          webSocket.send(chatId + document.getElementById("a").value + "\n");
+          document.getElementById("a").value = "";
+        }
+      }
+      let source;
+      function sse() {
+        source = new EventSource("/sse");
+        source.onmessage = function(event) {
+          console.log(event.data);
+        };
+      }
+      function sse_stop() {
+        source.close();
+      }
+    </script>
+  </head>
+  <body>
+    <form enctype="multipart/form-data" method="post" action="upload/img">
+      <input type="file" name="filetoupload" />
+      <input type="submit" value="file upload" />
+    </form>
+    <hr />
+    <button onclick="startWorker()">500보다 큰 소수 찾기</button>
+    <button onclick="stopWorker()">종료</button><br />
+    <p>결과 : <span id="result"></span></p>
+    <hr />
+    <input id="chatId" placeholder="채팅 아이디 입력" />
+    <button onclick="startchat()">채팅 접속</button>
+    <br /><br />
+    <textarea rows="10" cols="50" id="ta"></textarea><br />
+    <input onkeypress="sendMsg()" id="a" />
+    <br /><br />
+    <hr />
+    <button onclick="sse()">경매 진행 보기</button>
+    <button onclick="sse_stop()">경매 그만 보기</button>
+    <br /><br />
+  </body>
+</html>
